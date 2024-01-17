@@ -1,4 +1,10 @@
-const path = require("path");
+const crypto = require("crypto");
+const path = require("path"); 
+
+const crypto_orig_createHash = crypto.createHash;
+crypto.createHash = function (algorithm) {
+  return crypto_orig_createHash(algorithm === "md4" ? "sha256" : algorithm);
+};
 
 module.exports = {
   mode: "production",
@@ -6,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "umd"),
     filename: "my-typescript-package.js",
-    library: "MyTsPackage",
+    library: "lib-core-js",
     libraryTarget: "umd"
   },
   module: {
