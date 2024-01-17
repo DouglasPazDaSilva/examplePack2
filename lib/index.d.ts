@@ -1,2 +1,2 @@
-import { add } from "./myModule";
-export { add };
+import { add, formatCPF, subtract } from "./myModule";
+export { add, formatCPF, subtract };

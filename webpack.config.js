@@ -1,5 +1,10 @@
 const crypto = require("crypto");
-const path = require("path"); 
+const path = require("path");
+
+/**
+ * O algoritmo MD4 não está mais disponível no Node.js 17+ (devido à biblioteca SSL 3).
+ * Nesse caso, foi subistituido o MD4 pelo algoritmo sha256.
+*/
 
 const crypto_orig_createHash = crypto.createHash;
 crypto.createHash = function (algorithm) {
