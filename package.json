@@ -1,5 +1,5 @@
 {
-  "name": "typescript-npm-package-template",
+  "name": "example-pack2",
   "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaki-yama/typescript-npm-package-template.git"
+    "url": "git+https://github.com/DouglasPazDaSilva/examplePack2.git"
   },
   "files": [
     "lib",
