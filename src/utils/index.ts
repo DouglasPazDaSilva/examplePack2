@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import { nextTick } from 'vue'
-import { GlobalError, handleError } from './error'
+import type { GlobalError } from './error'
+import { handleError } from './error'
 
 interface Item {
   [key: string]: any
@@ -114,7 +115,9 @@ function formatPhoneNumber(phone: string) {
 
 function arrayEquals(firstArray: number[], secondArray: number[]) {
   // compara dois arrays de números
-  if (!firstArray || !secondArray) { return false }
+  if (!firstArray || !secondArray) {
+    return false
+  }
   return JSON.stringify(firstArray.sort()) === JSON.stringify(secondArray.sort())
 }
 
@@ -161,10 +164,12 @@ function getModifiedFields(initialValues: any, currentValues: any) {
 
   return modifiedFields
 }
-//TODO: deprecated
+// TODO: deprecated
 function formatInputMoney(value: string) {
   value = value.replace(/[^0-9]/g, '') // Remove tudo que não é número
-  if (!value) { return '' }
+  if (!value) {
+    return ''
+  }
 
   // Adicionando vírgula e pontos
   if (value.length > 2) {
@@ -199,12 +204,12 @@ function formatMoney(event: InputEvent, { clearEmptyValue = false } = {}) {
   value = value.replace(/[^0-9]/g, '')
   if (!value.length) {
     return ''
-  }
+  };
 
   const numericValue = Number.parseInt(value, 10) / 100
   if (clearEmptyValue && numericValue === 0) {
     return ''
-  }
+  };
 
   const formattedValue = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(numericValue)
   inputElement.value = formattedValue

@@ -1,24 +1,24 @@
-const crypto = require("crypto");
-const path = require("path");
+const crypto = require('node:crypto')
+const path = require('node:path')
 
 /**
  * O algoritmo MD4 não está mais disponível no Node.js 17+ (devido à biblioteca SSL 3).
  * Nesse caso, foi subistituido o MD4 pelo algoritmo sha256.
-*/
+ */
 
-const crypto_orig_createHash = crypto.createHash;
+const crypto_orig_createHash = crypto.createHash
 crypto.createHash = function (algorithm) {
-  return crypto_orig_createHash(algorithm === "md4" ? "sha256" : algorithm);
-};
+  return crypto_orig_createHash(algorithm === 'md4' ? 'sha256' : algorithm)
+}
 
 module.exports = {
-  mode: "production",
-  entry: "./src/index.ts",
+  mode: 'production',
+  entry: './src/index.ts',
   output: {
-    path: path.resolve(__dirname, "umd"),
-    filename: "my-typescript-package.js",
-    library: "lib-core-js",
-    libraryTarget: "umd"
+    path: path.resolve(__dirname, 'umd'),
+    filename: 'lib-core.js',
+    library: 'lib-core-js',
+    libraryTarget: 'umd',
   },
   module: {
     rules: [
@@ -26,15 +26,15 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "ts-loader",
+          loader: 'ts-loader',
           options: {
-            configFile: "tsconfig.umd.json"
-          }
-        }
-      }
-    ]
+            configFile: 'tsconfig.umd.json',
+          },
+        },
+      },
+    ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
-  }
-};
+    extensions: ['.ts', '.tsx', '.js'],
+  },
+}

@@ -1,4 +1,4 @@
-import { GlobalError } from './error';
+import type { GlobalError } from './error';
 interface Item {
     [key: string]: any;
 }

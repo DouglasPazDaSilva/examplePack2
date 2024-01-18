@@ -2,50 +2,41 @@
   "name": "example-pack2",
   "version": "0.0.1",
   "description": "",
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouglasPazDaSilva/examplePack2.git"
+  },
+  "keywords": [],
   "main": "lib/index.js",
   "module": "esm/index.js",
   "types": "lib/index.d.js",
+  "files": [
+    "esm",
+    "lib",
+    "umd"
+  ],
   "scripts": {
     "build": "npm run build:cjs && npm run build:esm && npm run build:umd",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:umd": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DouglasPazDaSilva/examplePack2.git"
-  },
-  "files": [
-    "lib",
-    "esm",
-    "umd"
-  ],
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zaki-yama/typescript-npm-package-template/issues"
-  },
-  "homepage": "https://github.com/zaki-yama/typescript-npm-package-template#readme",
-  "devDependencies": {
-    "@babel/types": "^7.23.6",
-    "@types/axios": "^0.14.0",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "prettier": "^1.19.1",
-    "ts-loader": "^6.2.2",
-    "typescript": "^5.3.3",
-    "webpack": "^4.47.0",
-    "webpack-cli": "^3.3.12"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@types/node": "^20.11.5",
     "axios": "^1.6.5",
     "dayjs": "^1.11.10",
     "vue": "^3.4.14"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.23.6",
+    "@types/axios": "^0.14.0",
+    "ts-loader": "^6.2.2",
+    "typescript": "^5.3.3",
+    "webpack": "^4.47.0",
+    "webpack-cli": "^3.3.12"
   }
 }

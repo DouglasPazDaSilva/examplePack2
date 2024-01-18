@@ -135,7 +135,7 @@ function getModifiedFields(initialValues, currentValues) {
     });
     return modifiedFields;
 }
-//TODO: deprecated
+// TODO: deprecated
 function formatInputMoney(value) {
     value = value.replace(/[^0-9]/g, ''); // Remove tudo que não é número
     if (!value) {
@@ -172,10 +172,12 @@ function formatMoney(event, { clearEmptyValue = false } = {}) {
     if (!value.length) {
         return '';
     }
+    ;
     const numericValue = Number.parseInt(value, 10) / 100;
     if (clearEmptyValue && numericValue === 0) {
         return '';
     }
+    ;
     const formattedValue = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(numericValue);
     inputElement.value = formattedValue;
     // Ajusta a posição do cursor
