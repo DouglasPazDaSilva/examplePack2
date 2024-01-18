@@ -1,4 +1,44 @@
-import * as index from './utils/index';
-import * as error from './utils/error';
+import { 
+  arrayEquals,
+  capitalizeFirstLetter,
+  convertFiltersToQueryParams,
+  createAvatarLetter,
+  createFormData,
+  filterItems,
+  filterItemsWithSearch,
+  formatCNPJ,
+  formatCPF,
+  formatDate,
+  formatInputMoney,
+  formatMoney,
+  formatPhoneNumber,
+  generateRandomColor,
+  getModifiedFields,
+  to,
+} from './utils/index';
 
-export { index, error };
+import { 
+  GlobalError,
+  handleError
+ } from './utils/error';
+
+export { 
+  arrayEquals,
+  capitalizeFirstLetter,
+  convertFiltersToQueryParams,
+  createAvatarLetter,
+  createFormData,
+  filterItems,
+  filterItemsWithSearch,
+  formatCNPJ,
+  formatCPF,
+  formatDate,
+  formatInputMoney,
+  formatMoney,
+  formatPhoneNumber,
+  generateRandomColor,
+  getModifiedFields,
+  to,
+  GlobalError,
+  handleError
+};
