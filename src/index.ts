@@ -1,3 +1,4 @@
-import { add, formatCPF, subtract } from "./myModule";
+import * as index from './utils/index';
+import * as error from './utils/error';
 
-export { add, formatCPF, subtract };
+export { index, error };
